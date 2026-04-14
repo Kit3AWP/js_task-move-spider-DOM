@@ -6,8 +6,10 @@ const spider = document.querySelector('.spider');
 container.addEventListener('click', (e) => {
   const rect = container.getBoundingClientRect();
 
-  const clickX = e.clientX - rect.left - container.clientLeft;
-  const clickY = e.clientY - rect.top - container.clientTop;
+  // eslint-disable-next-line
+  const clickX = e.clientX - rect.left - container.clientLeft + container.scrollLeft;
+  // eslint-disable-next-line
+  const clickY = e.clientY - rect.top - container.clientTop + container.scrollTop;
 
   let x = clickX - spider.offsetWidth / 2;
   let y = clickY - spider.offsetHeight / 2;
